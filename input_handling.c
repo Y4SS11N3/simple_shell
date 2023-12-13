@@ -22,5 +22,13 @@ char *read_and_trim_input()
 		}
 		return (NULL);
 	}
+
+	while (n > 0 && (input[n - 1] == ' ' ||
+				input[n - 1] == '\t' ||
+				input[n - 1] == '\n'))
+	{
+		input[--n] = '\0'; /* Trim trailing spaces, tabs, and newlines */
+	}
+
 	return (input);
 }
